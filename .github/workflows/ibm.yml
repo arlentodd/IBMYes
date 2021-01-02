@@ -31,12 +31,12 @@ jobs:
       env:
         RESOURSE_ID: ${{ secrets.RESOURSE_ID }}
       run: |
-        ./IBM_Cloud_CLI/ibmcloud target -g "$RESOURSE_ID"
+        ./IBM_Cloud_CLI/ibmcloud target -g "98e4ee2e436a4a8598eaf2e81c28a5ea"
         ./IBM_Cloud_CLI/ibmcloud target --cf
         ./IBM_Cloud_CLI/ibmcloud cf install -f -v 6.15.0
     - name: Restart IBM Cloud
       env:
         IBM_APP_NAME: ${{ secrets.IBM_APP_NAME }}
       run: |
-        ./IBM_Cloud_CLI/ibmcloud cf restart "$IBM_APP_NAME"
+        ./IBM_Cloud_CLI/ibmcloud cf restart "huanma-go"
 
